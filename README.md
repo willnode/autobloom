@@ -1,12 +1,13 @@
 # AutoBloom v1.0
 
-Make Windows 11 Bloom Wallpaper Animated when signing in.
+Make Windows 11 Bloom Wallpaper get animated when signing in.
 
-![Bloom Animation](./media/bloom.mp4)
+https://user-images.githubusercontent.com/20214420/136711426-270f258c-090a-4189-a4fb-3e5863ec1586.mp4
+
 
 ## Installation
 
-1. Download on releases
+1. Download at [releases page](https://github.com/willnode/autobloom/releases)
 2. Run `install.bat`
 3. Try log out from your computer :)
 
@@ -16,6 +17,6 @@ To uninstall just run `uninstall.bat`.
 
 ## Credits
 
-Uses [MPV](https://mvp.io).
+Uses [MPV](https://mpv.io).
 
 All media contents are belongs to Microsoft.
