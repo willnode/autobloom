@@ -15,6 +15,8 @@ Note that this software uses scheduled tasks to run during startup. If you move 
 
 To uninstall just run `uninstall.bat`.
 
+If you encounter "some virus detected" in the release, delete two `.exe` files inside `src` folder and open `compile.bat` in the same folder. It will regenerate new exe files so (hopefully) your antivirus won't complain anymore.
+
 ## Credits
 
 Uses [MPV](https://mpv.io).
