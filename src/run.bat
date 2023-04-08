@@ -1,10 +1,13 @@
 @echo off
-set home=%~dp0
-cd /D "%~dp0"
-cd ..\mpv
-%home%ChangeWallpaper.exe %home%..\media\first.bmp
+if not [%1]==[ch] (start conhost cmd /c "" "%~dpnx0" ch & exit)
+powershell -NoP -W hidden ; exit
+set "_home=%~dp0"
+cd /D "%_home%"
+
+powershell -NoP .\wallpaper.ps1 "%_home%..\media\first.bmp"
+
 timeout 1
-start /B mpv %home%..\media\bloom.mp4 --no-osc --no-input-default-bindings --no-taskbar-progress
+start /B ..\mpv\mpv ..\media\bloom.mp4 --no-osc --no-input-default-bindings --no-taskbar-progress
 cd ..\src
-timeout 5
-%home%ChangeWallpaper.exe %home%..\media\last.bmp
+timeout 4
+powershell -NoP .\wallpaper.ps1 "%_home%..\media\last.bmp"
