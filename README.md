@@ -14,10 +14,10 @@ Note that this software uses scheduled tasks to run during startup. If you move 
 
 To uninstall just run `uninstall.bat`.
 
-The program should not be detected as a virus anymore, as it does no longer contain compiled VB code. Check [this Virustotal scan](https://www.virustotal.com/gui/file/c4d0e098ca71db2645097d6535b41835e1ed09184bd608d4a326f42f6e3de775?nocache=1) from the [latest update](/willnode/autobloom/pull/16).
+The program should not be detected as virus anymore, as it no longer contains compiled VB code. Check [this Virustotal scan](https://www.virustotal.com/gui/file/c4d0e098ca71db2645097d6535b41835e1ed09184bd608d4a326f42f6e3de775?nocache=1) from the [latest update](/willnode/autobloom/pull/16).
 
 ## Credits
 
-Uses [MPV](https://mpv.io).
+Uses [mpv](https://mpv.io).
 
 All media contents belong to Microsoft.
