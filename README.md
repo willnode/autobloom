@@ -1,9 +1,8 @@
-# AutoBloom v1.0
+# AutoBloom
 
-Make Windows 11 Bloom Wallpaper get animated when signing in.
+Make Windows 11 Bloom Wallpaper get animated when signing in (light mode only).
 
-https://user-images.githubusercontent.com/20214420/136711426-270f258c-090a-4189-a4fb-3e5863ec1586.mp4
-
+https://user-images.githubusercontent.com/59333567/230786657-43061ac4-04f2-4b04-9472-18fbdeee424d.mp4
 
 ## Installation
 
@@ -15,10 +14,10 @@ Note that this software uses scheduled tasks to run during startup. If you move 
 
 To uninstall just run `uninstall.bat`.
 
-If you encounter "some virus detected" in the release, delete two `.exe` files inside `src` folder and open `compile.bat` in the same folder. It will regenerate new exe files so (hopefully) your antivirus won't complain anymore.
+The program should not be detected as a virus anymore, as it does no longer contain compiled VB code. Check [this Virustotal scan](https://www.virustotal.com/gui/file/c4d0e098ca71db2645097d6535b41835e1ed09184bd608d4a326f42f6e3de775?nocache=1) from the [latest update](/willnode/autobloom/pull/16).
 
 ## Credits
 
 Uses [MPV](https://mpv.io).
 
-All media contents are belongs to Microsoft.
+All media contents belong to Microsoft.

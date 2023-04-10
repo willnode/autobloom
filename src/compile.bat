@@ -1,2 +1,0 @@
-C:\Windows\Microsoft.NET\Framework\v4.0.30319\vbc "%~dp0\ChangeWallpaper.vb" /out:"%~dp0\ChangeWallpaper.exe" /target:winexe
-C:\Windows\Microsoft.NET\Framework\v4.0.30319\vbc "%~dp0\RunSilent.vb" /out:"%~dp0\RunSilent.exe" /target:winexe
