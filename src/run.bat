@@ -1,9 +1,9 @@
-@echo off
+rem @echo off
 if not [%1]==[ch] (start conhost cmd /c "" "%~dpnx0" ch & exit)
 shift
-set "_theme=%~1"
+set "_theme=%~2"
 powershell -NoP -W hidden ; exit
-set "_home=%~dp0"
+set "_home=%~1"
 cd /D "%_home%"
 
 powershell -NoP .\wallpaper.ps1 "%_home%..\media\%_theme%\first.webp"
