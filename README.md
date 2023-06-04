@@ -2,7 +2,7 @@
 
 Make Windows 11 Bloom Wallpaper get animated when signing in (light mode only).
 
-https://user-images.githubusercontent.com/59333567/230786657-43061ac4-04f2-4b04-9472-18fbdeee424d.mp4
+https://github.com/aritz331/autobloom/assets/59333567/daadcf8b-b594-4ee0-9040-7abdb97f800a
 
 ## Installation
 
