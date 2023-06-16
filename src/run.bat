@@ -9,8 +9,7 @@ cd /D "%_home%"
 powershell -NoP .\wallpaper.ps1 "%_home%..\media\%_theme%\first.webp"
 
 timeout 1
-start /B ..\mpv\mpv ..\media\%_theme%\bloom.mp4 --no-osc --no-input-default-bindings --no-input-builtin-bindings --no-taskbar-progress --no-window-dragging ^
-    --deband --hwdec=auto --no-border --cache=yes --demuxer-max-bytes=488281KiB --demuxer-readahead-secs=120 --autofit=100%% --player-operation-mode=pseudo-gui --input-ipc-server=\\.\pipe\mpvsocket --force-window=yes --volume=0
+start /B ..\mpv\mpv ..\media\%_theme%\bloom.mp4 --volume=0 --geometry=-9999:0 --force-window=yes --no-window-dragging --cursor-autohide=no --stop-screensaver=no --input-default-bindings=no --keepaspect=no --no-osc  --hwdec=no --no-config
 cd ..\src
 timeout 2
 powershell -NoP .\wallpaper.ps1 "%_home%..\media\%_theme%\last.webp"
