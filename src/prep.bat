@@ -1,4 +1,6 @@
 @echo off
-set "_home=%~dp0"
+set "_home=%~1"
 cd /D "%_home%"
-powershell -NoP .\wallpaper.ps1 "%_home%..\media\first.bmp"
+shift
+set "_theme=%~1"
+powershell -NoP .\wallpaper.ps1 "%_home%..\media\%_theme%\first.webp"
