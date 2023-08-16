@@ -9,7 +9,6 @@ set "_theme=light"
 
 SCHTASKS /CREATE /SC ONLOGON /TN "AUTOBLOOM"      /TR "wscript '%~dp0src\silent.vbs' 'conhost cmd /c '%~dp0src\run.bat' ch '%~dp0src\ ' %_theme% '"
 SCHTASKS /CREATE /SC ONSTART /TN "AUTOBLOOM PREP" /TR "wscript '%~dp0src\silent.vbs' 'conhost cmd /c '%~dp0src\prep.bat' '%~dp0src\ ' %_theme% '" /RU "SYSTEM"
-powershell -Command "Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned"
 cls
 
 echo AutoBloom has been installed!
