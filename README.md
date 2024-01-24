@@ -8,7 +8,7 @@ https://github.com/eltrevii/autobloom/assets/59333567/daadcf8b-b594-4ee0-9040-7a
 
 1. Download at [releases page](https://github.com/willnode/autobloom/releases)
 2. Run `install.bat`
-3. Try lrebooting or logging out
+3. Try rebooting or logging out
 
 AutoBloom uses scheduled tasks to run during startup. If you move the files, you have to uninstall it and reinstall it. It will not run with battery power, in order to change that you have to [disable only run in AC power by yourself](https://stackoverflow.com/questions/9075564/change-settings-for-power-for-windows-scheduled-task).
 To uninstall just run `uninstall.bat`.
