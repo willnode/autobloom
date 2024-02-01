@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: download mpv
         run: |
-          echo "api=$(curl \"https://api.github.com/repos/shinchiro/mpv-winbuild-cmake/releases/latest\" | python -c "import sys, json\; print(json.load(sys.stdin)['assets'][9]['browser_download_url'])")" >> $GITHUB_ENV
+          echo "api=$(curl "https://api.github.com/repos/shinchiro/mpv-winbuild-cmake/releases/latest" | python -c "import sys, json; print(json.load(sys.stdin)['assets'][9]['browser_download_url'])")" >> $GITHUB_ENV
           curl $api -o mpv.7z
           7z x mpv.7z -ompv/
           
