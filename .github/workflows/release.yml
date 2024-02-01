@@ -10,6 +10,16 @@ permissions:
   contents: write
 
 jobs:
+  debug:
+    name: debug ls
+    runs-on: ubuntu-latest
+    steps:
+      - name: debug - ls
+        run: ls -l
+
+      - name: debug - ls (recursive)
+        run: ls -l -R
+
   release:
     name: create release
     runs-on: ubuntu-latest
