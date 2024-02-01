@@ -35,7 +35,8 @@ jobs:
           echo "api url: $api"
           curl -sL "$api" -o mpv.7z
           7z x mpv.7z -ompv/
-          rm CODEOWNERS mpv.7z
+          rm CODEOWNERS mpv.7z .gitignore
+          rm -r .git .github
           
       - name: create release
         env:
