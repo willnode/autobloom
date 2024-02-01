@@ -1,0 +1,25 @@
+name: Create release
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        reequired: true
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: automated release
+    runs-on: ubuntu-latest
+    steps:
+      - name: create release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{ github.ref_name }}
+        run: |
+          gh release create "$tag" \
+              --repo="$GITHUB_REPOSITORY" \
+              --title="autobloom v${{ github.event.inputs.message }}" \
+              --generate-notes
