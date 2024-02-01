@@ -35,7 +35,7 @@ jobs:
           echo "api url: $api"
           curl -sL "$api" -o mpv.7z
           7z x mpv.7z -ompv/
-          rm CODEOWNERS mpv.7z .gitignore mpv/updater.bat
+          rm CODEOWNERS mpv.7z .gitignore README.md mpv/updater.bat
           rm -r .git .github mpv/doc mpv/installer 
           
       - name: create release
