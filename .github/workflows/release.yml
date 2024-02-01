@@ -44,8 +44,8 @@ jobs:
           tag: v${{ github.event.inputs.tag }}
         run: |
           zip -r autobloom.zip .
-          gh release create "$tag" \
+          echo "download autobloom from the 'autobloom.zip' file below" | gh release create "$tag" \
               autobloom.zip \
               --repo="$GITHUB_REPOSITORY" \
               --title="autobloom ${tag}" \
-              --generate-notes
+              -F -
