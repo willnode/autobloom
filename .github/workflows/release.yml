@@ -35,14 +35,14 @@ jobs:
           echo "api url: $api"
           curl -sL "$api" -o mpv.7z
           7z x mpv.7z -ompv/
-          rm CODEOWNERS
-          zip -r autobloom.zip .
+          rm CODEOWNERS mpv.7z
           
       - name: create release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           tag: v${{ github.event.inputs.tag }}
         run: |
+          zip -r autobloom.zip .
           gh release create "$tag" \
               autobloom.zip \
               --repo="$GITHUB_REPOSITORY" \
