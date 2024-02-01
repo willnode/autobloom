@@ -14,6 +14,12 @@ jobs:
     name: create release
     runs-on: ubuntu-latest
     steps:
+      - name: download mpv
+        run: |
+          api = $(curl "https://api.github.com/repos/shinchiro/mpv-winbuild-cmake/releases/latest" | python -c "import sys, json; print(json.load(sys.stdin)['assets'][9]['browser_download_url'])")
+          curl $api -o mpv.7z
+          7z x mpv.7z -ompv/
+          
       - name: create release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
