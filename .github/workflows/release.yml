@@ -14,6 +14,8 @@ jobs:
     name: debug ls
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+      
       - name: debug - ls
         run: ls -l
 
@@ -24,6 +26,8 @@ jobs:
     name: create release
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+      
       - name: download mpv
         run: |
           api=$(curl -s "https://api.github.com/repos/shinchiro/mpv-winbuild-cmake/releases/latest" | python -c "import sys, json; print(json.load(sys.stdin)['assets'][8]['browser_download_url'])")
