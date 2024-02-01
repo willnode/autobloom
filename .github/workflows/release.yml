@@ -16,10 +16,9 @@ jobs:
     steps:
       - name: download mpv
         run: |
-          api=$(curl "https://api.github.com/repos/shinchiro/mpv-winbuild-cmake/releases/latest" | python -c "import sys, json; print(json.load(sys.stdin)['assets'][9]['browser_download_url'])")
-          echo $api
-          # echo "MPV_API=$api" >> $GITHUB_ENV
-          curl $api -o mpv.7z
+          api=$(curl "https://api.github.com/repos/shinchiro/mpv-winbuild-cmake/releases/latest" | python -c "import sys, json; print(json.load(sys.stdin)['assets'][8]['browser_download_url'])")
+          echo "api url: $api"
+          curl "$api" -o mpv.7z
           7z x mpv.7z -ompv/
           
       - name: create release
