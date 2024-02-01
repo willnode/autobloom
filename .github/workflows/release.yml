@@ -31,9 +31,12 @@ jobs:
       - name: download mpv
         run: |
           api=$(curl -s "https://api.github.com/repos/shinchiro/mpv-winbuild-cmake/releases/latest" | python -c "import sys, json; print(json.load(sys.stdin)['assets'][8]['browser_download_url'])")
+          tag=v${{ github.event.inputs.tag }}
           echo "api url: $api"
           curl -sL "$api" -o mpv.7z
           7z x mpv.7z -ompv/
+          rm CODEOWNERS
+          zip -r autobloom.zip .
           
       - name: create release
         env:
@@ -41,6 +44,7 @@ jobs:
           tag: v${{ github.event.inputs.tag }}
         run: |
           gh release create "$tag" \
+              autobloom.zip \
               --repo="$GITHUB_REPOSITORY" \
               --title="autobloom ${tag}" \
               --generate-notes
