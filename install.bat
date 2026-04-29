@@ -9,8 +9,10 @@ set "_theme=light"
 
 SCHTASKS /CREATE /SC ONLOGON /TN "AUTOBLOOM"      /TR "wscript '%~dp0src\silent.vbs' 'conhost' 'cmd' '/c' '%~dp0src\run.bat' '%_theme%'"
 SCHTASKS /CREATE /SC ONSTART /TN "AUTOBLOOM PREP" /TR "wscript '%~dp0src\silent.vbs' 'conhost' 'cmd' '/c' '%~dp0src\prep.bat' '%_theme%'"
-cls
 
+powershell -NoP -c "Unblock-File %~dp0src\*.*"
+
+cls
 echo AutoBloom has been installed!
 
 timeout 3 >nul
