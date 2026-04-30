@@ -1,6 +1,10 @@
 name: automated release
 
 on:
+  push:
+    tags:
+      - 'v*.*'
+
   workflow_dispatch:
     inputs:
       tag:
@@ -31,7 +35,6 @@ jobs:
       - name: download mpv
         run: |
           api=$(curl -s "https://api.github.com/repos/shinchiro/mpv-winbuild-cmake/releases/latest" | python -c "import sys, json; print(json.load(sys.stdin)['assets'][11]['browser_download_url'])")
-          tag=v${{ github.event.inputs.tag }}
           echo "api url: $api"
           curl -sL "$api" -o mpv.7z
           7z x mpv.7z -ompv/
@@ -41,7 +44,7 @@ jobs:
       - name: create release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          tag: v${{ github.event.inputs.tag }}
+          tag: v${{ github.event.inputs.tag || github.ref }}
         run: |
           zip -r autobloom.zip .
           echo "download autobloom from the 'autobloom.zip' file below" | gh release create "$tag" \
