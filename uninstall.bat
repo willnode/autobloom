@@ -1,9 +1,18 @@
 @echo off
-if not "%1"=="am_admin" (powershell start -verb runas '%0' am_admin & exit /b)
-dism || exit
-SCHTASKS /DELETE /TN "AUTOBLOOM" /f
-SCHTASKS /DELETE /TN "AUTOBLOOM PREP" /f
+fltmc >nul 2>&1 || (powershell start -verb runas '%~dpnx0' am_admin & exit /b)
+
+cd /d %~dp0
+
 cls
 
-echo AutoBloom has been removed.
+echo Removing scheduled tasks...
+echo ===========================
+
+SCHTASKS /DELETE /TN "AUTOBLOOM"      /f >nul
+SCHTASKS /DELETE /TN "AUTOBLOOM PREP" /f >nul
+
+echo ===========================
+echo.
+
+echo AutoBloom has been uninstalled.
 timeout 3 >nul
