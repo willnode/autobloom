@@ -8,11 +8,12 @@ cls
 echo Removing scheduled tasks...
 echo ===========================
 
-SCHTASKS /DELETE /TN "AUTOBLOOM"      /f >nul
-SCHTASKS /DELETE /TN "AUTOBLOOM PREP" /f >nul
+SCHTASKS /DELETE /TN "AUTOBLOOM"      /f
+SCHTASKS /DELETE /TN "AUTOBLOOM PREP" /f
 
 echo ===========================
 echo.
 
 echo AutoBloom has been uninstalled.
-timeout 3 >nul
+echo Bye!
+pause
